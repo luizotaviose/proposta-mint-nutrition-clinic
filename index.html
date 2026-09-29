@@ -33,7 +33,7 @@
   --evergreen:#17583a;
   --evergreen-2:#0f4129;
   --ink:#14241c;
-  --stone:#5b6961;
+  --stone:#46534c;
   --line:#d7e3db;
   --white:#ffffff;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
@@ -92,7 +92,7 @@ h3{font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.005em}
 .drawer .btn{margin-top:24px}
 
 /* Hero */
-.hero{padding-block:clamp(36px,5vw,72px) clamp(56px,7vw,96px)}
+.hero{padding-block:clamp(36px,5vw,72px) clamp(56px,7vw,96px);background:linear-gradient(180deg,var(--mist) 0%,#f1f8f3 100%)}
 .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
 .hero h1{font-size:clamp(40px,5.6vw,74px)}
 .hero .lead{margin-top:22px;font-size:clamp(17px,1.5vw,20px);color:var(--stone);max-width:44ch}
@@ -130,7 +130,14 @@ h3{font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.005em}
 @media (max-width:540px){.creds .wrap{grid-template-columns:1fr}.cred{border-left:0;padding-left:0;border-top:1px solid var(--line)}.cred:first-child{border-top:0}}
 
 /* Pricing / how it starts */
-.pricing{background:var(--mist)}
+.pricing{background:var(--evergreen);color:#fff}
+.pricing .h2{color:#fff}
+.pricing .intro{color:#d3ecdd}
+.pricing .step-label{color:#fff}
+.pricing .step-label span{background:var(--mint);color:var(--evergreen-2)}
+.pricing .plan{border-color:transparent;color:var(--ink)}
+.pricing .plan.best{border-color:var(--mint);box-shadow:0 0 0 3px var(--mint)}
+.pricing .follow{border-color:transparent;color:var(--ink)}
 .steps{display:grid;grid-template-columns:1fr 1.9fr;gap:18px;margin-top:clamp(40px,5vw,64px);align-items:stretch}
 .step-label{font-weight:600;color:var(--evergreen);font-size:15px;display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .step-label span{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--evergreen);color:#fff;font-size:14px}
@@ -152,18 +159,21 @@ h3{font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.005em}
 @media (max-width:680px){.bundles{grid-template-columns:1fr}}
 
 /* Featured services */
-.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(40px,5vw,60px);border-top:1px solid var(--line)}
-.feat a{display:flex;flex-direction:column;gap:10px;padding:28px 26px 30px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
-.feat a:not(:nth-child(3n+1)){padding-left:26px;border-left:1px solid var(--line)}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(40px,5vw,60px)}
+.feat a{display:flex;flex-direction:column;gap:10px;padding:28px 26px 26px;background:var(--mist);border-radius:var(--r);border-top:4px solid var(--mint);text-decoration:none;color:var(--ink);transition:background .2s}
+.feat a:hover{background:var(--mist-2)}
+
 .feat h3{font-family:var(--serif);font-weight:500;font-size:clamp(23px,2vw,28px);letter-spacing:-.01em}
 .feat p{color:var(--stone);font-size:15.5px}
 .feat .go{margin-top:auto;padding-top:8px;font-weight:600;color:var(--evergreen);font-size:15px}
 .feat a:hover h3{color:var(--evergreen)}
-@media (max-width:980px){.feat{grid-template-columns:1fr 1fr}.feat a:not(:nth-child(3n+1)){padding-left:0;border-left:0}.feat a:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}}
-@media (max-width:600px){.feat{grid-template-columns:1fr}.feat a:nth-child(even){padding-left:0;border-left:0}}
+@media (max-width:980px){.feat{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.feat{grid-template-columns:1fr}}
 
 /* A–Z index */
-.index{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(3,1fr);gap:28px 40px}
+.index{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.index section{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.index-title{font:500 clamp(24px,2.4vw,32px)/1.2 var(--serif);margin-top:clamp(56px,7vw,88px)}
 .index section h3{font-size:15px;color:var(--evergreen);margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid var(--mint)}
 .index ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 .index a{color:var(--ink);text-decoration:none;font-size:15.5px;display:block;padding:5px 0}
@@ -172,9 +182,9 @@ h3{font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.005em}
 @media (max-width:600px){.index{grid-template-columns:1fr}}
 
 /* Team */
-.team{background:#fff;border-block:1px solid var(--line)}
+.team{background:var(--mist)}
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:clamp(40px,5vw,60px)}
-.rd{border-top:3px solid var(--mint);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.rd{background:#fff;border-radius:var(--r);border-top:4px solid var(--mint);padding:24px;display:flex;flex-direction:column;gap:10px}
 .rd .ini{width:64px;height:64px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font:500 24px var(--serif);color:var(--evergreen)}
 .rd h3{font-family:var(--serif);font-weight:500;font-size:24px}
 .rd .lic{font-size:14px;color:var(--evergreen);font-weight:600;font-variant-numeric:tabular-nums}
@@ -189,11 +199,14 @@ h3{font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.005em}
 .score span{font-size:15px;color:var(--stone);line-height:1.4}
 .score .st{color:#e3a41b;letter-spacing:2px;font-size:18px;display:block}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(36px,4vw,56px)}
-.quote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:18px}
+.quote{background:var(--mist);border:0;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:18px}
+.quote::before{content:"\201C";font:500 64px/.6 var(--serif);color:var(--mint);display:block;height:26px}
 .quote blockquote{font:400 20px/1.45 var(--serif);color:var(--ink)}
 .quote figcaption{margin-top:auto;font-size:14px;color:var(--stone)}
 .quote figcaption b{color:var(--ink);font-weight:600}
-.quote.site{background:var(--mist);border-color:transparent}
+.quote.site{background:var(--evergreen)}
+.quote.site blockquote,.quote.site figcaption b{color:#fff}
+.quote.site figcaption{color:#cfe9da}
 @media (max-width:980px){.quotes{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.quotes{grid-template-columns:1fr}}
 
@@ -225,9 +238,9 @@ h3{font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.005em}
 @media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
 
 /* More */
-.more{background:var(--mist)}
+.more{background:#fff}
 .more .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.more article{background:#fff;border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px}
+.more article{background:var(--mist);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:12px}
 .more h3{font-family:var(--serif);font-weight:500;font-size:24px}
 .more p,.more li{font-size:15.5px;color:var(--stone)}
 .more ul{margin:0;padding-left:18px;display:grid;gap:4px}
@@ -260,6 +273,7 @@ footer .wrap{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
 .mbar .btn{flex:1;min-height:48px;padding:0 14px;font-size:15px}
 @media (max-width:760px){.mbar{display:flex}body{padding-bottom:72px}}
 
+@media (min-width:1700px){:root{--maxw:1440px}body{font-size:18px}.plan ul,.feat p,.rd p,.more p,.more li,.info-list p,.index a{font-size:17px}.hero h1{font-size:82px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -413,7 +427,7 @@ footer .wrap{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
 </section>
 
 <!-- SERVICES -->
-<section class="section" id="services" aria-labelledby="servicesTitle">
+<section class="section" id="services" aria-labelledby="servicesTitle" style="background:#fff">
   <div class="wrap">
     <h2 class="h2" id="servicesTitle">What our dietitians help with</h2>
     <p class="intro">The most requested services are below. Every condition and goal in the full list has its own page.</p>
@@ -427,6 +441,7 @@ footer .wrap{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
       <a href="https://mintnutritionclinic.com/pages/heart-disease-and-hypertension" target="_blank" rel="noopener"><h3>Heart disease and hypertension</h3><p>Manage or prevent high or low blood pressure through meal planning, weight management and activity, including preventive care for family history.</p><span class="go">Heart health service</span></a>
     </div>
 
+    <h3 class="index-title">All conditions and goals</h3>
     <div class="index" id="index"></div>
   </div>
 </section>
@@ -462,7 +477,7 @@ footer .wrap{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
 </section>
 
 <!-- REVIEWS -->
-<section class="section" id="reviews" aria-labelledby="revTitle">
+<section class="section" id="reviews" aria-labelledby="revTitle" style="background:#fff">
   <div class="wrap">
     <div class="reviews-head">
       <div>
@@ -482,7 +497,7 @@ footer .wrap{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
 </section>
 
 <!-- VISIT -->
-<section class="section visit" id="visit" aria-labelledby="visitTitle" style="background:#fff;border-top:1px solid var(--line)">
+<section class="section visit" id="visit" aria-labelledby="visitTitle" style="background:var(--mist)">
   <div class="wrap">
     <figure><img src="assets/yeg.jpg" alt="The Yonge-Eglinton Centre towers in Toronto, where the clinic is located" loading="lazy"></figure>
     <div>
